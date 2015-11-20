@@ -1,0 +1,275 @@
+// =================== 
+// VARIABLES
+// ===================
+$color-primario: rgb(37, 152, 197);
+$color-gris: rgb(120, 120, 118);
+$color-gris2: rgb(246, 246, 246);
+$color-gris3: rgb(99, 99, 99);
+$color-azul: rgb(22, 74, 113);
+$color-azul-hover: rgba(22, 74, 113, 0.8);
+
+$fuente-1: 'Open Sans', sans-serif;
+$fuente-2: 'Gotham', sans-serif;
+
+$break-1: 1170px;
+$break-2: 970px;
+$break-3: 750px;
+$break-4: 630px;
+$break-5: 375px;
+$min-width: 350px;
+
+// =================== 
+// FUENTES
+// ===================
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Light.ttf');
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/GothamRnd-Light.otf');
+    font-weight: lighter;
+}
+
+
+
+// =================== 
+// MIXINS
+// ===================
+
+//Limpia los margins y paddigs de elemento
+@mixin limpiar() {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+* {
+	box-sizing: border-box;
+	@include limpiar();
+}
+body {
+	min-width: $min-width;
+}
+.container-fluid, .row {
+	@include limpiar();	
+}
+a:focus, a:hover { 
+    text-decoration: none;
+}
+
+// =================== 
+// HEADER
+// ===================
+header {
+	background: 
+	-webkit-linear-gradient(
+      rgba(37, 152, 197, 0.9), 
+      rgba(37, 152, 197, 0.9)
+    ), url("../img/bg.jpg");
+    background: 
+	-moz-linear-gradient(
+      rgba(37, 152, 197, 0.9), 
+      rgba(37, 152, 197, 0.9)
+    ), url("../img/bg.jpg");
+    background: 
+	-ms-linear-gradient(
+      rgba(37, 152, 197, 0.9), 
+      rgba(37, 152, 197, 0.9)
+    ), url("../img/bg.jpg");
+	background: 
+	linear-gradient(
+      rgba(37, 152, 197, 0.9), 
+      rgba(37, 152, 197, 0.9)
+    ), url("../img/bg.jpg");
+
+	background-size: cover;
+    background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 600px;
+	text-align: center;
+	@media screen and (max-width: $break-4) {
+	 	height: 550px;
+	}
+	@media screen and (max-width: $break-5) {
+	 	height: 500px;
+	}
+
+	.row-1 {
+		img {
+			margin-top: 50px;
+			@media screen and (max-width: $break-4) {
+			 	width: 300px;
+			}
+			@media screen and (max-width: $break-5) {
+			 	width: 200px;
+			}
+		}
+	}
+	.row-2 {
+		img {
+			margin-top: 60px;
+			@media screen and (max-width: $break-4) {
+			 	width: 400px;
+			}
+			@media screen and (max-width: 430px) {
+			 	width: 350px;
+			}
+			@media screen and (max-width: $break-5) {
+			 	width: 300px;
+			}
+		}
+	}
+	
+	.row-3 {
+		margin-top: 50px;
+		.boton {
+			width: 220px;
+			height: 60px;
+			display: inline-block;
+			vertical-align: top;
+			color: #fff;
+			font-family: $fuente-1;
+			font-weight: bold;
+			font-size: 11px;
+			padding-top: 20px;
+			text-decoration: none;
+			color: #fff;
+			@media screen and (max-width: $break-5) {
+				width: 180px;	
+			}
+		}
+
+		.boton-1 {
+			background-color: $color-azul;
+			margin-right: 20px;
+			@media screen and (max-width: 550px) {
+			 	display: block;	
+			 	margin: 0px auto;
+			}
+			&:hover {
+				background-color: $color-azul-hover;	
+			}
+		}
+
+		.boton-2 {
+			border: 1px solid #fff;
+			margin-left: 20px;
+			@media screen and (max-width: 550px) {
+			 	display: block;	
+			 	margin: 20px auto;
+			}
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.2);	
+			}
+		}
+	}
+
+}//Fin Header
+
+// =================== 
+// NIVEL 2
+// ===================
+.row-n2-1 {
+	p {
+		font-family: $fuente-2;
+		font-weight: lighter;
+		font-size: 20px;
+		color: $color-gris;
+		text-align: center;
+		margin-top: 50px;
+	}
+}
+.line {
+	width: 60px;
+	border: 1px solid $color-azul;
+	margin: 40px auto;
+	border-radius: 5px;
+}
+
+.row-n2-2 {
+	p {
+		font-family: $fuente-1;
+		font-weight: bold;
+		color: $color-gris;
+		text-align: center;
+		margin-bottom: 60px;
+	}
+}
+
+
+// =================== 
+// NIVEL 3
+// ===================
+.nivel-3 {
+	background-color: $color-gris2;
+	padding: 50px 0px;
+	.row-n3-1, .row-n3-2, .row-n3-3, .row-n3-4, .row-n3-5, .row-n3-6, .row-n3-7 {
+		text-align: center;
+		margin-bottom: 50px;
+		@media screen and (max-width: $break-4) {
+			margin-bottom: 0px;
+		}
+		p {
+			font-family: $fuente-1;
+			font-weight: bold;
+			font-size: 20px;
+			text-align: left;
+			margin-left: 5%;
+			margin-bottom: 40px;
+			text-shadow: 4px 4px 9px rgba(150, 150, 150, 1);
+		}
+		img {
+			display: inline-block;
+			width: 200px;
+			height: auto;
+			margin: 0px 30px 20px 30px;
+			@media screen and (max-width: $break-4) {
+			 	display: block;
+			 	margin: 40px auto;
+			}
+		}
+		#emprende, #magical {
+			width: 275px;
+		}
+		#nxtplabs {
+			width: 175px;
+		}
+	}
+}
+
+// =================== 
+// FOOTER
+// ===================
+
+footer {
+	background-color: $color-gris3;
+	font-family: $fuente-2;
+	font-weight: lighter;
+	font-size: 12px;
+	color: #fff;
+	position: relative;
+	p {
+		display: inline-block;
+		margin-top: 10px;
+		small {
+			font-family: $fuente-1;
+			font-weight: lighter;
+			font-size: 14px;
+		}
+	}
+	#footer-left {
+		float: left;
+		margin-left: 10%;
+	}
+
+}
